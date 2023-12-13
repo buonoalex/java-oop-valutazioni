@@ -28,6 +28,12 @@ public class Main {
         List<Student> studentsPass = coursePrincipal.studentListPass();
         UtilityValue.PrintListStudent(studentsPass);
 
+        //Stampiamo coloro che non hanno superato l'esame
+        System.out.println("Ecco i bocciati : \n");
+
+        List<Student> studentsFail = coursePrincipal.studentListFailed();
+        UtilityValue.PrintListStudent(studentsFail);
+
         //Chiudo Scanner
         myBroScan.close();
 

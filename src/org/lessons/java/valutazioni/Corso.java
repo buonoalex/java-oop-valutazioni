@@ -36,6 +36,16 @@ public class Corso {
         return studentsPass;
     }
 
+    public List<Student> studentListFailed(){
+        List<Student> studentsFail = new ArrayList<>();
+        for(Student element : studentList){
+            if(!Student.IsFailOrPass(element.getPercentageOfAbsences(),element.getAverageVote())){
+                studentsFail.add(element);
+            }
+        }
+        return studentsFail;
+    }
+
     //Getter and Setter
     public List<Student> getStudentList() {
         return studentList;
