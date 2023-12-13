@@ -6,17 +6,14 @@ import java.util.Objects;
 
 public class Student {
     //Attributi
-    private static int id;
-    private int percentageOfAbsences;
-    private double averageVote;
+    private static int idNext = 1;
+    private final int id;
+    private final int percentageOfAbsences;
+    private final double averageVote;
 
     //Costruttori
-    public Student(Student s1){
-
-    }
-
     public Student() {
-        id = IncrementId();
+        this.id = idNext++;
         this.percentageOfAbsences = UtilityValue.RandomNumberCoursePercent();
         this.averageVote = UtilityValue.RandomNumberCourseAverage();
     }
@@ -30,9 +27,6 @@ public class Student {
         }else return percent < 25 && averageVote >= 2;
     }
 
-    public int IncrementId(){
-       return id++;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -49,11 +43,11 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student" + "\n"+
+        return "Student " +getId()+ "\n"+
                 "id = " + id + "\n"+
-                " percentageOfAbsences = " + percentageOfAbsences +"%"+"\n"+
-                " averageVote = " + averageVote +"\n"+
-                "--------"+"\n";
+                "percentageOfAbsences = " + percentageOfAbsences +"%"+"\n"+
+                "averageVote = " + averageVote +"\n"+
+                "--------------------"+"\n";
     }
 
     //Getter and Setter
@@ -61,6 +55,7 @@ public class Student {
     public int getId() {
         return id;
     }
+
 
     public int getPercentageOfAbsences() {
         return percentageOfAbsences;

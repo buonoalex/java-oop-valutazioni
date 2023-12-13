@@ -1,5 +1,8 @@
 package org.lessons.java.utility;
 
+import org.lessons.java.valutazioni.Student;
+
+import java.util.List;
 import java.util.Random;
 
 public class UtilityValue {
@@ -23,6 +26,13 @@ public class UtilityValue {
     public static double RandomNumberCourseAverage(){
         Random number = new Random();
         return (double) Math.round(number.nextDouble(0, 5) * 100) /100;
+    }
+
+    public static void PrintListStudent(List<Student> list){
+        for (Student element : list){
+            String printStudent = element.toString();
+            System.out.println(printStudent);
+        }
     }
 
 }
