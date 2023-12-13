@@ -29,9 +29,7 @@ public class Corso {
     public List<Student> studentListPass(){
         List<Student> studentsPass = new ArrayList<>();
         for(Student element : studentList){
-            if (element.getAverageVote()>=2 && element.getPercentageOfAbsences()<25){
-                studentsPass.add(element);
-            }else if(element.getAverageVote()>2 && (element.getPercentageOfAbsences()<50 && element.getPercentageOfAbsences()>25)){
+            if(Student.IsFailOrPass(element.getPercentageOfAbsences(),element.getAverageVote())){
                 studentsPass.add(element);
             }
         }

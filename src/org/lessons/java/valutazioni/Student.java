@@ -19,7 +19,7 @@ public class Student {
     }
 
     //Metodi
-    public static boolean IsFailOrPass(int percent,int averageVote){
+    public static boolean IsFailOrPass(int percent,double averageVote){
         if (percent > 50){
             return false;
         } else if ((percent < 50 && percent > 25) && averageVote > 2){
